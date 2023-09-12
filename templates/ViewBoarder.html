@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Boarders</title>
+    <style>
+            body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f4e0; /* Light green background */
+        }
+
+        header {
+            background-color: #1c7729;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            background-color: #226c2c;
+            justify-content: center;
+            padding: 0.5rem 0;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        button {
+            background-color: #1c7729;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #226c2c;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #1c7729;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BG Boarding House</h1>
+    </header>
+    <main>
+        <h2>View Boarders</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr onclick="window.open('Account_Transient.html')">
+                    <td>rmcbarrios</td>
+                    <td>Raphael Mico</td>
+                    <td>Barrios</td>
+                </tr>
+                <tr onclick="window.open('Account_Student.html')">
+                    <td>dgjaraplasan</td>
+                    <td>Dan Gabriel</td>
+                    <td>Jaraplasan</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2023 BG Boarding House. All rights reserved.</p>
+    </footer>
+</body>
+</html>

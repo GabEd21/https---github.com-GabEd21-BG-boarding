@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Boarder</title>
+    <style>
+        body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f4e0;
+        }
+
+        header {
+            background-color: #1c7729;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            background-color: #226c2c;
+            justify-content: center;
+            padding: 0.5rem 0;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #1c7729;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #226c2c;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #1c7729;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BG Boarding House</h1>
+    </header>
+    <div class="container">
+        <h1>Add Boarder</h1>
+        <form method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+            
+            <label for="middleName">Middle Name:</label>
+            <input type="text" id="middleName" name="middleName" required>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+            
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" required>
+            
+            <label for="school">School:</label>
+            <input type="text" id="school" name="school" required>
+            
+            <label for="course">Course:</label>
+            <input type="text" id="course" name="course" required>
+            
+            <label for="schoolYear">School Year:</label>
+            <input type="text" id="schoolYear" name="schoolYear" required>
+            
+            <label for="emergencyName">Emergency Contact Name:</label>
+            <input type="text" id="emergencyName" name="emergencyName" required>
+            
+            <label for="emergencyNumber">Emergency Contact Number:</label>
+            <input type="tel" id="emergencyNumber" name="emergencyNumber" required>
+
+            <label for="emergencyRelationship">Emergency Contact Relationship:</label>
+            <input type="text" id="emergencyRelationship" name="emergencyRelationship" required>
+            
+            <input type="submit" name="submit">
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2023 BG Boarding House. All rights reserved.</p>
+    </footer>
+</body>
+</html>

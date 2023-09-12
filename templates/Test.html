@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management System</title>
+    <style>
+        body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f4e0;
+        }
+
+        header {
+            background-color: #1c7729;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            background-color: #226c2c;
+            justify-content: center;
+            padding: 0.5rem 0;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .main.grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+        
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .room {
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            margin: 1rem;
+            padding: 1rem;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .room img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #1c7729;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BG Boarding House</h1>
+    </header>
+    <main class="grid">
+        <section class="room">
+            <img src="{{ url_for('static', filename='boarders.jpg') }}" alt="View Boarders">
+            <h2>View Boarders</h2>
+            <p>View information about current boarders.</p>
+            <button><a href="{{ url_for('view_boarder') }}">View</a></button>
+        </section>
+        
+        <section class="room">
+            <img src="{{ url_for('static', filename='room3.jpg') }}" alt="View Room">
+            <h2>View Room</h2>
+            <p>Check room availability and details.</p>
+            <button>View</button>
+        </section>
+        
+        <section class="room">
+            <img src="{{ url_for('static', filename='payroll.jpg') }}" alt="Payroll">
+            <h2>Payroll</h2>
+            <p>Manage payroll for staff members.</p>
+            <button>Manage</button>
+        </section>
+        
+        <section class="room">
+            <img src="{{ url_for('static', filename='records.jpg') }}" alt="Records">
+            <h2>Records</h2>
+            <p>Access and manage various records.</p>
+            <button>Access</button>
+        </section>
+
+        <section class="room">
+            <h2>Add Boarder</h2>
+            <p>Add a new boarder to the system.</p>
+            <button><a href="{{ url_for('add_boarder') }}">Add</a></button>
+        </section>
+        
+        <section class="room">
+            <img src="{{ url_for('static', filename='add_transient.jpg') }}" alt="Add Transient">
+            <h2>Add Transient</h2>
+            <p>Add a transient guest reservation.</p>
+            <button><a href="AddTransient.html">Add</a></button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 BG Boarding House. All rights reserved.</p>
+    </footer>
+</body>
+</html>
