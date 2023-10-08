@@ -12,8 +12,8 @@ app.secret_key = 'your secret key'
 # Enter your database connection details below
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '5a*YMFEP'
-app.config['MYSQL_DB'] = 'bg_boarding_house'
+app.config['MYSQL_PASSWORD'] = 'Rsd253896@'
+app.config['MYSQL_DB'] = 'bgdorm'
 
 # Intialize MySQL
 mysql = MySQL(app)

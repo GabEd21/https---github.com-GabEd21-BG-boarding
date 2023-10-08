@@ -1,6 +1,6 @@
 import mysql.connector
 
-mydb = mysql.connector.connect(host="localhost",user="root", password="5a*YMFEP", database="bg_boarding_house")
+mydb = mysql.connector.connect(host="localhost",user="root", password="Rsd253896@", database="bgdorm")
 if mydb.is_connected():
     print("Connected to the database")
 else:
