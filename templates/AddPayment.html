@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Boarders</title>
+    <title>Create Payment</title>
     <style>
-            body, h1, h2, p, ul, li {
+        body, h1, h2, p, ul, li {
             margin: 0;
             padding: 0;
         }
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #e0f4e0; /* Light green background */
+            background-color: #e0f4e0;
         }
 
         header {
@@ -62,31 +62,6 @@
             border-radius: 3px;
         }
 
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-            font-weight: bold;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        tr:hover {
-            background-color: #ddd;
-        }
-
         button {
             background-color: #1c7729;
             color: white;
@@ -110,30 +85,41 @@
 </head>
 <body>
     <header>
-        <h1>BG Boarding House</h1>
+        <h1>Create Payment</h1>
     </header>
     <main>
-        <h2>View Boarders</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Username</th>
-                    <th>Boarders Name</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for customer in customers %}
-                <tr>
-                    <td>{{ customer.Customer_UserName }}</td>
-                    <td>{{ customer.Customer_LastName }}, {{ customer.Customer_FirstName }} {{ customer.Customer_MiddleName }}</td>
-                    <td><a href="{{ url_for('account_student', username=customer.Customer_UserName) }}">View Details</a></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <form action="/add_payment" method="post">
+
+            <label for="CustomerName">Customer Name:</label>
+            <input type="text" id="CustomerName" name="CustomerName"><br><br>
+
+            <label for="BuildingID">Building ID:</label>
+            <input type="text" id="BuildingID" name="BuildingID" required><br><br>
+
+            <label for="RoomID">Room ID:</label>
+            <input type="text" id="RoomID" name="RoomID" required><br><br>
+
+            <label for="Date">Date:</label>
+            <input type="date" id="Date" name="Date" required><br><br>
+
+            <label for="DatePaid">Date Paid:</label>
+            <input type="date" id="DatePaid" name="DatePaid" required><br><br>
+
+            <label for="AmountPaid">Amount Paid:</label>
+            <input type="number" id="AmountPaid" name="AmountPaid" required><br><br>
+
+            <label for="Status">Status:</label>
+            <input type="text" id="Status" name="Status" required><br><br>
+
+            <label for="Remarks">Remarks:</label>
+            <textarea id="Remarks" name="Remarks" rows="4" cols="50"></textarea><br><br>
+
+            <input type="submit" value="Submit Payment">
+        </form>
+
     </main>
     <footer>
-        <p>&copy; 2023 BG Boarding House. All rights reserved.</p>
+        <p>&copy; 2023 Hotel Management System. All rights reserved.</p>
     </footer>
 </body>
 </html>

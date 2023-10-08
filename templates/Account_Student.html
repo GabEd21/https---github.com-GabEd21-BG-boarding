@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account (Student)</title>
+    <style>
+        body, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f4e0;
+        }
+
+
+        header {
+            background-color: #1c7729;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            background-color: #226c2c;
+            justify-content: center;
+            padding: 0.5rem 0;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+
+
+        .container {
+            max-width: auto;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #1c7729;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #226c2c;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #1c7729;
+            color: white;
+        }
+
+        h2, h3, p{
+            margin: 10px;
+            padding: auto;
+        }
+        table{
+            margin: 10px;
+        }
+        td{
+            padding-right: 1cm;
+        }
+        h4{
+            margin: 15px;
+            padding-top: 5px;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BG Boarding House</h1>
+    </header>
+    <div class="container">
+        <h2>{{ customer.Customer_LastName }}, {{ customer.Customer_FirstName }} {{ customer.Customer_MiddleName }}</h2>
+        <p> ID: {{ customer.CustomerID }} </p>
+        <br>
+        <table>
+            <tr>
+                <td style="padding-right: 5cm"><b>School: </b> {{ customer.School }}</td>
+                <td><b>Emergency Contact Name: </b> {{ customer.Customer_EmergencyContactName }}</td>
+            </tr>
+            <tr>
+                <td><b>Course:</b> {{ customer.Course }}</td>
+                <td><b>Emergency Contact Number: </b>{{ customer.Customer_EmergencyContactNumber }}</td>
+            </tr>
+            <tr>
+                <td><b>Contact Number: </b> {{ customer.Customer_MobileNumber }} </td>
+                <td><b>Relationship: </b> {{ customer.Customer_EmergencyContactRelationship }}</td>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <tr>
+                <td><b>Address:</b> {{ customer.Customer_Address }}</td>
+            </tr>
+        </table>
+        <br><br>
+    <table>
+        <tr>
+            <td>
+            <h3>Contracts</h3>
+            <button onclick="window.location.href='/add_payment?username={{ customer.Customer_UserName }}'">Create Contract</button>
+            </td>
+            <td>
+            <h3>Payments</h3>
+            <table style="border: 2px; border-style: solid; text-align: center">
+                <h4>2022-2023</h4>
+                <tr style="font-size: small; font-weight: bold; border: 1px; border-style: solid">
+                    <td>AMOUNT</td>
+                    <td>PAYMENT DATE</td>
+                    <td>REMARKS</td>
+                </tr>
+                {% if customer and customer.contract %}
+                <tr>
+                    <td>{{ customer.contract.AmountPaid }}</td> 
+                    <td>{{ customer.contract.DatePaid }}</td> 
+                    <td>{{ customer.contract.Remarks }}</td> 
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="3">No payments found.</td>
+                </tr>
+                {% endif %}
+            </table>
+            <button onclick="window.location.href='/add_payment?username={{ customer.Customer_UserName }}'">Create Payment</button>
+            </td>
+           
+        </tr>
+    </table>
+    </div>
+    <footer>
+        <p>&copy; 2023 Hotel Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
